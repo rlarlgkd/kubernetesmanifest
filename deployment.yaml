@@ -18,7 +18,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: rlarlgkd/fm3back:5
+      - image: rlarlgkd/fm3back:8
         name: flaskdemo
         resources: {}
 status: {}
