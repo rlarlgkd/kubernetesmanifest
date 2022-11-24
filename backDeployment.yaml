@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-back
+  labels:
+    app: app-back
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  minReadySeconds: 20
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-back
+      tier: back
+  template:
+    metadata:
+      labels:
+        app: app-back
+        tier: back
+    spec:
+      containers:
+        - image: docker.io/rlarlgkd/fm3back:latest
+          name: app-back
+          resources:
+            requests:
+              cpu: 50m
+              memory: 500Mi
+            limits:
+              cpu: 100m
+              memory: 1000Mi
+          ports:
+          - containerPort: 5000
