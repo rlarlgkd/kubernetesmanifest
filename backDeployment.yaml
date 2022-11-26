@@ -23,7 +23,7 @@ spec:
         tier: back
     spec:
       containers:
-        - image: docker.io/rlarlgkd/fm3back:6
+        - image: docker.io/rlarlgkd/fm3back:7
           name: app-back
           resources:
             requests:
